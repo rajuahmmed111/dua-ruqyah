@@ -6,8 +6,8 @@ import { VerticalNav } from "@/components/VerticalNav";
 
 export default function Home() {
   return (
-    <div className="flex">
-      <div>
+    <div className="flex mt-5">
+      <div className="mx-8">
         <VerticalNav />
       </div>
 

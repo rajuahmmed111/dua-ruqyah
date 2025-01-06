@@ -76,7 +76,7 @@ export function VerticalNav() {
   const [activeItem, setActiveItem] = useState<string>("home");
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-20 bg-white shadow-sm flex flex-col items-center py-4">
+    <div className=" left-0 top-0 h-screen w-20 bg-white shadow-sm flex flex-col items-center py-4">
       {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeItem === item.id;

@@ -4,9 +4,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Header() {
   return (
-    <header className="flex h-14 items-center gap-4 border-b bg-white px-6">
+    <header className="flex h-14 items-center gap-4">
       <div className="flex items-center gap-2">
-        <span className="text-xl font-semibold">Dua Page</span>
+        <span className="text-[26px] font-semibold ml-7">Dua Page</span>
       </div>
       <div className="ml-auto flex items-center gap-4">
         <div className="relative w-96">
