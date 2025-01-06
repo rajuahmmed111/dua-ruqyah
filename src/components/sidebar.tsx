@@ -57,3 +57,68 @@ export function Sidebar() {
     </div>
   );
 }
+
+// import {
+//   Home,
+//   Grid,
+//   Lightbulb,
+//   Bookmark,
+//   Lock,
+//   MessageCircle,
+//   Book,
+//   LucideIcon,
+//   Search,
+// } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { ScrollArea } from "@/components/ui/scroll-area";
+
+// export default function Sidebar() {
+//   return (
+//     <div className="w-80 border-r bg-background">
+//       <div className="flex h-14 items-center border-b px-4">
+//         <h1 className="text-xl font-semibold">Duas Page</h1>
+//       </div>
+
+//       <div className="p-4 border-b">
+//         <h2 className="text-lg font-semibold text-primary mb-4">Categories</h2>
+//         <div className="relative">
+//           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+//           <Input placeholder="Search Categories" className="pl-10" />
+//         </div>
+//       </div>
+
+//       <ScrollArea className="h-[calc(100vh-8rem)]">
+//         <div className="p-4 space-y-2">
+//           <CategoryItem icon={Home} label="Home" />
+//           <CategoryItem icon={Grid} label="Categories" isActive />
+//           <CategoryItem icon={Lightbulb} label="Learn" />
+//           <CategoryItem icon={Bookmark} label="Bookmarks" />
+//           <CategoryItem icon={Lock} label="Memorize" />
+//           <CategoryItem icon={MessageCircle} label="Chat" />
+//           <CategoryItem icon={Book} label="Books" />
+//         </div>
+//       </ScrollArea>
+//     </div>
+//   );
+// }
+
+// function CategoryItem({
+//   icon: Icon,
+//   label,
+//   isActive,
+// }: {
+//   icon: LucideIcon;
+//   label: string;
+//   isActive?: boolean;
+// }) {
+//   return (
+//     <Button
+//       variant={isActive ? "secondary" : "ghost"}
+//       className="w-full justify-start"
+//     >
+//       <Icon className="mr-2 h-4 w-4" />
+//       {label}
+//     </Button>
+//   );
+// }
