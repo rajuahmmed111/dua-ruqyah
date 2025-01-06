@@ -5,10 +5,13 @@ export function DuaContent() {
   return (
     <div className="flex-1 overflow-auto">
       <div className="container py-6">
-        <div className="mb-6">
-          <p className="text-sm text-muted-foreground">
-            Section:
-            <span className="text-foreground">
+        <div className="mb-6 bg-white p-5 rounded-xl">
+          <p className="">
+            <span className="text-lg font-semibold text-[#1FA45B]">
+              Section:
+            </span>
+
+            <span className="text-[16px] font-semibold">
               The servant is dependent on his Lord
             </span>
           </p>
