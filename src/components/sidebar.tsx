@@ -270,6 +270,8 @@ export function CategoriesSidebar() {
     null
   );
 
+
+  // toggle sections
   const toggleCategory = (id: number) => {
     setExpandedCategoryId((prevId) => (prevId === id ? null : id));
   };
