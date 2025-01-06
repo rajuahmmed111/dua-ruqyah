@@ -1,9 +1,10 @@
 "use client";
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+// import { Search } from "lucide-react";
+// import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import Image from "next/image";
-import { useState } from "react";
+// import Image from "next/image";
+// import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface Subcategory {
   id: number;
@@ -396,82 +397,47 @@ const categories: Category[] = [
 //     </div>
 //   );
 // }
+export default function CategoriesSidebar() {
+  const router = useRouter();
 
-export function CategoriesSidebar() {
-  const [expandedCategoryId, setExpandedCategoryId] = useState<number | null>(
-    null
-  );
-
-  // toggle sections
-  const toggleCategory = (id: number) => {
-    setExpandedCategoryId((prevId) => (prevId === id ? null : id));
+  const handleSubcategoryClick = (content: Subcategory["content"]) => {
+    // Pass content as query parameters to the `DuaContent` page
+    router.push(
+      `/dua-content?description=${encodeURIComponent(
+        content.description
+      )}&reference=${encodeURIComponent(
+        content.reference || ""
+      )}&arabic=${encodeURIComponent(
+        content.arabic || ""
+      )}&transliteration=${encodeURIComponent(
+        content.transliteration || ""
+      )}&translation=${encodeURIComponent(content.translation || "")}`
+    );
   };
 
   return (
-    <div className="w-[350px] m-5 rounded-xl overflow-hidden">
-      <div className="bg-white">
-        <div className="bg-[#1FA45B] p-4">
-          <h2 className="text-white text-xl text-center">Categories</h2>
-        </div>
-
-        <div className="p-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-            <Input
-              placeholder="Search Categories"
-              className="pl-9 bg-white border-gray-200"
-            />
+    <ScrollArea className="h-full">
+      {categories.map((category) => (
+        <div key={category.id} className="mb-4">
+          {/* Category Header */}
+          <div className="flex items-center space-x-2">
+            <img src={category.icon} alt={category.name} className="w-6 h-6" />
+            <span className="text-sm font-bold">{category.name}</span>
           </div>
-        </div>
-
-        <ScrollArea className="h-[600px]">
-          <div className="p-4 space-y-2">
-            {categories.map((category) => (
-              <div key={category.id} className="space-y-2">
-                <div
-                  onClick={() => toggleCategory(category.id)}
-                  className="hover:bg-[#E8F0F5] rounded-lg p-4 flex items-center cursor-pointer"
-                >
-                  <Image
-                    src={category.icon}
-                    alt={category.name}
-                    width={40}
-                    height={40}
-                    className="rounded-lg"
-                  />
-                  <div className="ml-3 flex-1">
-                    <h3 className="font-medium text-gray-900">
-                      {category.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      Subcategory: {category.subcategoryCount}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-gray-900">{category.duasCount}</span>
-                    <p className="text-sm text-gray-500">Duas</p>
-                  </div>
-                </div>
-
-                {/* Show subcategories only if this category is expanded */}
-                {expandedCategoryId === category.id && (
-                  <div className="pl-4 ml-4 border-l-2 border-emerald-500 space-y-3">
-                    {category.subcategories.map((subcategory) => (
-                      <div
-                        key={subcategory.id}
-                        className="text-sm text-gray-600 hover:text-emerald-500 cursor-pointer flex items-center"
-                      >
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2" />
-                        {subcategory.title}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+          {/* Subcategories */}
+          <ul className="ml-6 mt-2 space-y-1">
+            {category.subcategories.map((subcategory) => (
+              <li
+                key={subcategory.id}
+                className="text-blue-500 text-sm cursor-pointer hover:underline"
+                onClick={() => handleSubcategoryClick(subcategory.content)}
+              >
+                {subcategory.title}
+              </li>
             ))}
-          </div>
-        </ScrollArea>
-      </div>
-    </div>
+          </ul>
+        </div>
+      ))}
+    </ScrollArea>
   );
 }
