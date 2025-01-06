@@ -23,7 +23,7 @@ interface Category {
   icon: string;
   subcategoryCount: number;
   duasCount: number;
-  subcategories: Subcategory[]; // Make sure this is an array of Subcategory objects
+  subcategories: Subcategory[]; 
 }
 
 const categories: Category[] = [
