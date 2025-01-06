@@ -7,7 +7,7 @@ export function DuaContent() {
       <div className="container py-6">
         <div className="mb-6">
           <p className="text-sm text-muted-foreground">
-            Section:{" "}
+            Section:
             <span className="text-foreground">
               The servant is dependent on his Lord
             </span>
