@@ -1,128 +1,153 @@
-"use client";
-
 import { Search } from "lucide-react";
-import Link from "next/link";
 import { Input } from "@/components/ui/input";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import Image from "next/image";
 
-export function Sidebar() {
+interface Category {
+  id: number;
+  name: string;
+  icon: string;
+  subcategoryCount: number;
+  duasCount: number;
+  subcategories?: string[];
+}
+
+const categories: Category[] = [
+  {
+    id: 1,
+    name: "Ablution & Bath",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 2,
+    duasCount: 4,
+    subcategories: ["When starting ablution", "Upon completing the ablution"],
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 2,
+    name: "Mosque",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 5,
+    duasCount: 13,
+  },
+  {
+    id: 3,
+    name: "Salah",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 17,
+    duasCount: 102,
+  },
+  {
+    id: 4,
+    name: "Witr & Other",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 6,
+    duasCount: 33,
+  },
+  {
+    id: 5,
+    name: "Sickness",
+    icon: "/placeholder.svg?height=40&width=40",
+    subcategoryCount: 3,
+    duasCount: 43,
+  },
+];
+
+export function CategoriesSidebar() {
   return (
-    <div className="max-w-4xl border-r">
-      <div className="m-5 rounded-xl bg-white">
-        <h2 className="text-lg rounded-t-xl font-semibold text-white text-center py-3 ru mb-4 bg-[#1FA45B] ">
-          Categories
-        </h2>
-        <div className="px-4">
-          <div className="relative mb-4">
-            <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search by Categories" className="pl-8" />
-          </div>
-          <nav className="space-y-2">
-            <div className="space-y-2">
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 bg-green-50 text-green-600"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white">
-                  📖
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium">
-                    Introduction to Dua
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    Subcategory: II
-                  </span>
-                </div>
-                <span className="ml-auto text-xs text-muted-foreground">
-                  15 Duas
-                </span>
-              </Link>
-              <div className="ml-4 border-l-2 border-green-600 pl-6 space-y-2">
-                <Link href="#" className="block text-sm hover:text-green-600">
-                  What is Dua
-                </Link>
-                <Link href="#" className="block text-sm hover:text-green-600">
-                  Conditions for Dua to be successful
-                </Link>
-                <Link href="#" className="block text-sm hover:text-green-600">
-                  The Methode Of Dua
-                </Link>
-                <Link href="#" className="block text-sm hover:text-green-600">
-                  Before Dua
-                </Link>
-                <Link href="#" className="block text-sm hover:text-green-600">
-                  During Dua
-                </Link>
-              </div>
-            </div>
-          </nav>
+    <div className="w-[350px] m-5 rounded-xl overflow-hidden">
+      <div className="bg-white">
+        <div className="bg-[#1FA45B] p-4">
+          <h2 className="text-white text-xl text-center">Categories</h2>
         </div>
+
+        <div className="p-4">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            <Input
+              placeholder="Search Categories"
+              className="pl-9 bg-white border-gray-200"
+            />
+          </div>
+        </div>
+
+        <ScrollArea className="h-[600px]">
+          <div className="p-4 space-y-2">
+            {categories.map((category) => (
+              <div key={category.id} className="space-y-2">
+                <div className="hover:bg-[#E8F0F5] rounded-lg p-4 flex items-center">
+                  <Image
+                    src={category.icon}
+                    alt={category.name}
+                    width={40}
+                    height={40}
+                    className="rounded-lg"
+                  />
+                  <div className="ml-3 flex-1">
+                    <h3 className="font-medium text-gray-900">
+                      {category.name}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      Subcategory: {category.subcategoryCount}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-gray-900">{category.duasCount}</span>
+                    <p className="text-sm text-gray-500">Duas</p>
+                  </div>
+                </div>
+
+                {category.subcategories && (
+                  <div className="pl-4 ml-4 border-l-2 border-emerald-500 space-y-3">
+                    {category.subcategories.map((subcategory, index) => (
+                      <div
+                        key={index}
+                        className="text-sm text-gray-600 hover:text-emerald-500 cursor-pointer flex items-center"
+                      >
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2" />
+                        {subcategory}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </ScrollArea>
       </div>
     </div>
   );
 }
-
-// import {
-//   Home,
-//   Grid,
-//   Lightbulb,
-//   Bookmark,
-//   Lock,
-//   MessageCircle,
-//   Book,
-//   LucideIcon,
-//   Search,
-// } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-// import { Input } from "@/components/ui/input";
-// import { ScrollArea } from "@/components/ui/scroll-area";
-
-// export default function Sidebar() {
-//   return (
-//     <div className="w-80 border-r bg-background">
-//       <div className="flex h-14 items-center border-b px-4">
-//         <h1 className="text-xl font-semibold">Duas Page</h1>
-//       </div>
-
-//       <div className="p-4 border-b">
-//         <h2 className="text-lg font-semibold text-primary mb-4">Categories</h2>
-//         <div className="relative">
-//           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-//           <Input placeholder="Search Categories" className="pl-10" />
-//         </div>
-//       </div>
-
-//       <ScrollArea className="h-[calc(100vh-8rem)]">
-//         <div className="p-4 space-y-2">
-//           <CategoryItem icon={Home} label="Home" />
-//           <CategoryItem icon={Grid} label="Categories" isActive />
-//           <CategoryItem icon={Lightbulb} label="Learn" />
-//           <CategoryItem icon={Bookmark} label="Bookmarks" />
-//           <CategoryItem icon={Lock} label="Memorize" />
-//           <CategoryItem icon={MessageCircle} label="Chat" />
-//           <CategoryItem icon={Book} label="Books" />
-//         </div>
-//       </ScrollArea>
-//     </div>
-//   );
-// }
-
-// function CategoryItem({
-//   icon: Icon,
-//   label,
-//   isActive,
-// }: {
-//   icon: LucideIcon;
-//   label: string;
-//   isActive?: boolean;
-// }) {
-//   return (
-//     <Button
-//       variant={isActive ? "secondary" : "ghost"}
-//       className="w-full justify-start"
-//     >
-//       <Icon className="mr-2 h-4 w-4" />
-//       {label}
-//     </Button>
-//   );
-// }
