@@ -58,6 +58,36 @@ const categories: Category[] = [
           reference: "Bukhari: 844",
         },
       },
+      {
+        id: 3,
+        title: "Conditions for Dua to be successful",
+        content: {
+          description:
+            "Prophet (ﷺ) used to say after every compulsory prayer. The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.",
+          arabic:
+            "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+          transliteration:
+            "Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadir",
+          translation:
+            "There is none worthy of worship except Allah alone with no partner or associate. His is the Dominion and to Him be all praise, and He is able to do all things.",
+          reference: "Bukhari: 844",
+        },
+      },
+      {
+        id: 4,
+        title: "Conditions for Dua to be successful",
+        content: {
+          description:
+            "Prophet (ﷺ) used to say after every compulsory prayer. The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.",
+          arabic:
+            "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+          transliteration:
+            "Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadir",
+          translation:
+            "There is none worthy of worship except Allah alone with no partner or associate. His is the Dominion and to Him be all praise, and He is able to do all things.",
+          reference: "Bukhari: 844",
+        },
+      },
     ],
   },
   {
