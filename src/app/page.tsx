@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { DuaContent } from "@/components/dua-content";
 import { SettingsPanel } from "@/components/settings-sidebar";
 import { VerticalNav } from "@/components/VerticalNav";
-import CategoriesSidebar from "@/components/sidebar";
+import { CategoriesSidebar } from "@/components/sidebar";
 
 export default function Home() {
   return (
