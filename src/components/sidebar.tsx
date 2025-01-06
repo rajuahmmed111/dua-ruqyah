@@ -90,7 +90,7 @@ const categories: Category[] = [
   {
     id: 3,
     name: "Fasting & Ramadan",
-    icon: "https://i.ibb.co/QD3FNTj/images3.png",
+    icon: "https://i.ibb.co/QD3FNTj/images.png",
     subcategoryCount: 2,
     duasCount: 6,
     subcategories: [
