@@ -214,6 +214,78 @@ const categories: Category[] = [
       },
     ],
   },
+  {
+    id: 8,
+    name: "Travel & Safety",
+    icon: "https://i.ibb.co/QD3FNTj/images8.png",
+    subcategoryCount: 2,
+    duasCount: 3,
+    subcategories: [
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+    ],
+  },
+  {
+    id: 8,
+    name: "Travel & Safety",
+    icon: "https://i.ibb.co/QD3FNTj/images8.png",
+    subcategoryCount: 2,
+    duasCount: 3,
+    subcategories: [
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+    ],
+  },
 ];
 
 // export function CategoriesSidebar() {
