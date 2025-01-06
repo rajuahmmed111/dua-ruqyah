@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -99,20 +99,32 @@ const categories: Category[] = [
     subcategories: [
       {
         id: 1,
-        title: "Importance of Salah",
+        title: "Conditions for Dua to be successful",
         content: {
           description:
-            "Salah is the second pillar of Islam and a daily obligation for every Muslim.",
-          reference: "Surah Al-Baqarah 2:3",
+            "Prophet (ﷺ) used to say after every compulsory prayer. The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.",
+          arabic:
+            "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+          transliteration:
+            "Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadir",
+          translation:
+            "There is none worthy of worship except Allah alone with no partner or associate. His is the Dominion and to Him be all praise, and He is able to do all things.",
+          reference: "Bukhari: 844",
         },
       },
       {
         id: 2,
-        title: "Dua after Salah",
+        title: "Conditions for Dua to be successful",
         content: {
           description:
-            "Prophet (ﷺ) taught various duas to be recited after salah for forgiveness and blessings.",
-          reference: "Muslim: 234",
+            "Prophet (ﷺ) used to say after every compulsory prayer. The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.",
+          arabic:
+            "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+          transliteration:
+            "Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadir",
+          translation:
+            "There is none worthy of worship except Allah alone with no partner or associate. His is the Dominion and to Him be all praise, and He is able to do all things.",
+          reference: "Bukhari: 844",
         },
       },
     ],
@@ -389,7 +401,6 @@ export function CategoriesSidebar() {
   const [expandedCategoryId, setExpandedCategoryId] = useState<number | null>(
     null
   );
-
 
   // toggle sections
   const toggleCategory = (id: number) => {
