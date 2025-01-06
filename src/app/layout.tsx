@@ -79,10 +79,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{
-          backgroundSize: "cover",
-          backgroundRepeat: "repeat",
           background: "#EBEEF2",
-          backgroundBlendMode: "multiply",
           minHeight: "100vh",
         }}
         className={inter.className}

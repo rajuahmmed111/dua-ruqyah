@@ -34,21 +34,25 @@
 //   )
 // }
 
-import { Languages, Settings2, Grid } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+
+
+
+import { Languages, Settings2, Grid } from 'lucide-react'
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu"
 
 export default function SettingsPanel() {
   return (
     <div className="w-80 border-l bg-background p-4">
       <div className="space-y-4">
         <h2 className="text-lg font-semibold">Settings</h2>
-
+        
         <div className="space-y-2">
           <h3 className="text-sm font-medium">Language Settings</h3>
           <DropdownMenu>
@@ -77,5 +81,6 @@ export default function SettingsPanel() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+

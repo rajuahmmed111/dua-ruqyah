@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Sidebar } from "@/components/sidebar"
-import { DuaContent } from "@/components/dua-content"
 import SettingsPanel from "@/components/settings-sidebar"
+import { DuaContent } from "@/components/dua-content"
 
 export default function Home() {
   return (
