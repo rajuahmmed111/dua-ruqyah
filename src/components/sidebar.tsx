@@ -194,6 +194,24 @@ const categories: Category[] = [
           reference: "Tirmidhi: 4598",
         },
       },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
     ],
   },
 ];
