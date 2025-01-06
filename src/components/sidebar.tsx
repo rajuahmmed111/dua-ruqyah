@@ -8,7 +8,7 @@ export function Sidebar() {
   return (
     <div className="w-80 border-r bg-white">
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-green-600 mb-4">
+        <h2 className="text-lg font-semibold text-white text-center py-3 ru mb-4 bg-[#1FA45B] ">
           Categories
         </h2>
         <div className="relative mb-4">

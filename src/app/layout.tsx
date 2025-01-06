@@ -58,32 +58,37 @@
 //   );
 // }
 
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import React from "react";
 
-import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
-import "./globals.css"
-import React from "react"
-
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Dua Page",
   description: "Learn and explore Islamic duas",
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="flex min-h-screen">
-          {children}
-        </div>
+      <body
+        style={{
+          backgroundSize: "cover",
+          backgroundRepeat: "repeat",
+          background: "#EBEEF2",
+          backgroundBlendMode: "multiply",
+          minHeight: "100vh",
+        }}
+        className={inter.className}
+      >
+        <div className="flex min-h-screen">{children}</div>
       </body>
     </html>
-  )
+  );
 }
-
