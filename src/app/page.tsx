@@ -18,9 +18,9 @@
 
 import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import DuaContent from "@/components/dua-content";
 import SettingsPanel from "@/components/settings-sidebar";
 import { Sidebar } from "@/components/sidebar";
+import { DuaContent } from "@/components/dua-content";
 
 
 export default function DuasPage() {
