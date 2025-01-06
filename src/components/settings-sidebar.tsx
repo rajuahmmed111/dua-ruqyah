@@ -104,7 +104,7 @@ export function SettingsPanel() {
   const [activeOption, setActiveOption] = useState<string>("language");
 
   return (
-    <div className="w-[300px] mx-7 mt-6 bg-white rounded-xl shadow-sm">
+    <div className="w-[300px] mx-7 mt-6 bg-white rounded-2xl shadow-sm">
       <div className="p-6">
         <h2 className="text-2xl font-semibold mb-6 text-center">Settings</h2>
         <div className="space-y-2">
