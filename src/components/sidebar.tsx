@@ -215,7 +215,7 @@ const categories: Category[] = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     name: "Travel & Safety",
     icon: "https://i.ibb.co/QD3FNTj/images8.png",
     subcategoryCount: 2,
