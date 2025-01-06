@@ -3,262 +3,195 @@ import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
 
+interface Subcategory {
+  id: number;
+  title: string;
+  content: {
+    description: string;
+    reference?: string;
+    arabic?: string;
+    transliteration?: string;
+    translation?: string;
+  };
+}
+
 interface Category {
   id: number;
   name: string;
   icon: string;
   subcategoryCount: number;
   duasCount: number;
-  subcategories?: string[];
+  subcategories: Subcategory[]; // Make sure this is an array of Subcategory objects
 }
 
 const categories: Category[] = [
   {
     id: 1,
     name: "Ablution & Bath",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
+    icon: "https://i.ibb.co/QD3FNTj/images.png",
     subcategoryCount: 3,
     duasCount: 5,
     subcategories: [
-      "When starting ablution",
-      "Upon completing the ablution",
-      "Before taking a bath",
+      {
+        id: 1,
+        title: "The servant is dependent on his Lord #1",
+        content: {
+          description:
+            "All human beings depend on Allah for their welfare and prevention of evil in various matters of their religion and world. Allah says (interpretation of the meaning): O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.",
+          reference: "Surah Al-Fatir 35:15",
+        },
+      },
+      {
+        id: 2,
+        title: "Conditions for Dua to be successful",
+        content: {
+          description:
+            "Prophet (ﷺ) used to say after every compulsory prayer. The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.",
+          arabic:
+            "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ ٱلْمُلْكُ وَلَهُ ٱلْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",
+          transliteration:
+            "Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadir",
+          translation:
+            "There is none worthy of worship except Allah alone with no partner or associate. His is the Dominion and to Him be all praise, and He is able to do all things.",
+          reference: "Bukhari: 844",
+        },
+      },
     ],
   },
   {
     id: 2,
-    name: "Mosque",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 5,
-    duasCount: 13,
+    name: "Prayer & Worship",
+    icon: "https://i.ibb.co/QD3FNTj/images2.png",
+    subcategoryCount: 4,
+    duasCount: 7,
     subcategories: [
-      "Upon entering the mosque",
-      "Upon leaving the mosque",
-      "After prayer in the mosque",
-      "Seeking forgiveness in the mosque",
-      "When sitting in the mosque",
+      {
+        id: 1,
+        title: "Importance of Salah",
+        content: {
+          description:
+            "Salah is the second pillar of Islam and a daily obligation for every Muslim.",
+          reference: "Surah Al-Baqarah 2:3",
+        },
+      },
+      {
+        id: 2,
+        title: "Dua after Salah",
+        content: {
+          description:
+            "Prophet (ﷺ) taught various duas to be recited after salah for forgiveness and blessings.",
+          reference: "Muslim: 234",
+        },
+      },
     ],
   },
   {
     id: 3,
-    name: "Salah",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 4,
-    duasCount: 8,
+    name: "Fasting & Ramadan",
+    icon: "https://i.ibb.co/QD3FNTj/images3.png",
+    subcategoryCount: 2,
+    duasCount: 6,
     subcategories: [
-      "When starting the prayer",
-      "During the bowing position",
-      "In prostration",
-      "After finishing the prayer",
+      {
+        id: 1,
+        title: "Dua for breaking fast",
+        content: {
+          description:
+            "Prophet (ﷺ) used to recite a specific dua while breaking his fast during Ramadan.",
+          arabic: "اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَبِكَ آمَنْتُ",
+          reference: "Tirmidhi: 3456",
+        },
+      },
     ],
   },
   {
     id: 4,
-    name: "Witr & Other",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
+    name: "Charity & Generosity",
+    icon: "https://i.ibb.co/QD3FNTj/images4.png",
     subcategoryCount: 3,
-    duasCount: 7,
+    duasCount: 4,
     subcategories: [
-      "Supplication during Witr",
-      "For Tahajjud",
-      "During Taraweeh prayers",
+      {
+        id: 1,
+        title: "Rewards for charity",
+        content: {
+          description:
+            "The Prophet (ﷺ) said: Charity does not decrease wealth.",
+          reference: "Muslim: 2588",
+        },
+      },
     ],
   },
   {
     id: 5,
-    name: "Sickness",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 3,
-    duasCount: 6,
+    name: "Family Relations",
+    icon: "https://i.ibb.co/QD3FNTj/images5.png",
+    subcategoryCount: 5,
+    duasCount: 9,
     subcategories: [
-      "For recovery from illness",
-      "When visiting the sick",
-      "Supplication for healing",
+      {
+        id: 1,
+        title: "Dua for parents",
+        content: {
+          description:
+            "A dua seeking Allah's mercy for parents as they raised us in childhood.",
+          arabic: "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+          reference: "Surah Al-Isra 17:24",
+        },
+      },
     ],
   },
   {
     id: 6,
-    name: "Travel",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
+    name: "Wealth & Livelihood",
+    icon: "https://i.ibb.co/QD3FNTj/images6.png",
     subcategoryCount: 4,
-    duasCount: 9,
+    duasCount: 8,
     subcategories: [
-      "Before starting a journey",
-      "Upon boarding a vehicle",
-      "When arriving at a destination",
-      "For safety during travel",
+      {
+        id: 1,
+        title: "Dua for sustenance",
+        content: {
+          description: "O Allah, bless me with lawful and abundant sustenance.",
+          reference: "Tirmidhi: 398",
+        },
+      },
     ],
   },
   {
     id: 7,
-    name: "Food & Drink",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 4,
-    duasCount: 10,
+    name: "Health & Healing",
+    icon: "https://i.ibb.co/QD3FNTj/images7.png",
+    subcategoryCount: 3,
+    duasCount: 5,
     subcategories: [
-      "Before eating",
-      "After eating",
-      "When drinking water",
-      "For gratitude after meals",
+      {
+        id: 1,
+        title: "Dua for the sick",
+        content: {
+          description: "Prophet (ﷺ) taught a dua for healing and protection.",
+          arabic: "أَذْهِبِ البَاسَ رَبَّ النَّاسِ اشْفِ أَنْتَ الشَّافِي",
+          reference: "Bukhari: 574",
+        },
+      },
     ],
   },
   {
     id: 8,
-    name: "Morning & Evening",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 3,
-    duasCount: 7,
+    name: "Travel & Safety",
+    icon: "https://i.ibb.co/QD3FNTj/images8.png",
+    subcategoryCount: 2,
+    duasCount: 3,
     subcategories: [
-      "Morning supplications",
-      "Evening supplications",
-      "Seeking blessings for the day",
-    ],
-  },
-  {
-    id: 9,
-    name: "Forgiveness",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 3,
-    duasCount: 8,
-    subcategories: [
-      "For personal forgiveness",
-      "For forgiveness of others",
-      "Supplication after sins",
-    ],
-  },
-  {
-    id: 10,
-    name: "Protection",
-    icon: "https://i.ibb.co.com/QD3FNTj/images.png",
-    subcategoryCount: 4,
-    duasCount: 11,
-    subcategories: [
-      "From harm",
-      "From evil eye",
-      "From envy",
-      "For family protection",
-    ],
-  },
-  {
-    id: 11,
-    name: "Wealth & Provision",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For halal income",
-      "For financial stability",
-      "Gratitude for provisions",
-    ],
-  },
-  {
-    id: 12,
-    name: "Marriage",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 7,
-    subcategories: [
-      "For a righteous spouse",
-      "For a happy marriage",
-      "Supplication during a wedding",
-    ],
-  },
-  {
-    id: 13,
-    name: "Parents",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For parents' health",
-      "For parents' forgiveness",
-      "For gratitude to parents",
-    ],
-  },
-  {
-    id: 14,
-    name: "Children",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For righteous children",
-      "For protection of children",
-      "For children's success",
-    ],
-  },
-  {
-    id: 15,
-    name: "Death & Afterlife",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 4,
-    duasCount: 10,
-    subcategories: [
-      "When someone passes away",
-      "For forgiveness of the deceased",
-      "For a good afterlife",
-      "For ease in the grave",
-    ],
-  },
-  {
-    id: 16,
-    name: "Gratitude",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For blessings received",
-      "After achieving success",
-      "For answered prayers",
-    ],
-  },
-  {
-    id: 17,
-    name: "Knowledge & Wisdom",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For seeking knowledge",
-      "For understanding Quran",
-      "For wisdom in decisions",
-    ],
-  },
-  {
-    id: 18,
-    name: "Repentance",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 8,
-    subcategories: [
-      "For seeking forgiveness",
-      "For making amends",
-      "After committing a mistake",
-    ],
-  },
-  {
-    id: 19,
-    name: "Rain & Weather",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 3,
-    duasCount: 6,
-    subcategories: [
-      "For rain",
-      "When it starts raining",
-      "For protection during storms",
-    ],
-  },
-  {
-    id: 20,
-    name: "Hajj & Umrah",
-    icon: "https://i.ibb.co.com/vdQ7hSX/download.jpg",
-    subcategoryCount: 4,
-    duasCount: 12,
-    subcategories: [
-      "Before starting Hajj",
-      "During Tawaf",
-      "At Arafat",
-      "After completing Hajj",
+      {
+        id: 1,
+        title: "Dua for travel",
+        content: {
+          description: "Prophet (ﷺ) said a specific dua for safe travels.",
+          arabic: "سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا",
+          reference: "Tirmidhi: 4598",
+        },
+      },
     ],
   },
 ];
@@ -315,7 +248,8 @@ export function CategoriesSidebar() {
                         className="text-sm text-gray-600 hover:text-emerald-500 cursor-pointer flex items-center"
                       >
                         <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2" />
-                        {subcategory}
+                        {subcategory.title}{" "}
+                        {/* Access the `title` property of the subcategory */}
                       </div>
                     ))}
                   </div>
