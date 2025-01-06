@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
-import SettingsPanel from "@/components/settings-sidebar"
 import { DuaContent } from "@/components/dua-content"
 import { CategoriesSidebar } from "@/components/sidebar"
+import { SettingsPanel } from "@/components/settings-sidebar"
 
 export default function Home() {
   return (
